@@ -106,6 +106,20 @@ origin, historical period, artistic features and cultural
 importance can be displayed here.
 </p>
 
+<h2>📷 Scan & Identify</h2>
+
+<p class="info">
+Scan the QR code placed near a heritage sculpture
+to discover its history and cultural information.
+</p>
+
+<button class="btn" onclick="identifySculpture()">
+📷 Scan Sculpture
+</button>
+
+<div id="reader" style="margin-top:20px;"></div>
+<p id="scanResult" class="info"></p>
+  
 <h2>🎧 Audio Guide</h2>
 
 <button class="btn" onclick="audioGuide()">
@@ -127,30 +141,65 @@ of heritage monuments through a small contribution.
 
 </div>
 
+<script src="https://unpkg.com/html5-qrcode"></script>
+
 <script>
 
-function audioGuide(){
-  alert("Audio guide will be connected here.");
+function identifySculpture() {
+
+  const scanner = new Html5Qrcode("reader");
+
+  scanner.start(
+    { facingMode: "environment" },
+    {
+      fps: 10,
+      qrbox: 250
+    },
+
+    function(decodedText) {
+
+      document.getElementById("scanResult").innerHTML =
+        "QR Scanned: " + decodedText;
+
+      scanner.stop();
+
+      window.location.href = decodedText;
+    },
+
+    function(errorMessage) {
+      // QR शोधत आहे
+    }
+
+  ).catch(function(error) {
+
+    document.getElementById("scanResult").innerHTML =
+      "Camera permission required.";
+
+  });
 }
 
 
-function audioGuide(){
-    alert("Audio Guide will be connected soon.");
+function audioGuide() {
+
+  alert("Audio Guide will be connected soon.");
+
 }
 
-function contribute(){
 
-    const upiId = "rahulbhise5125-1@oksbi";
-    const amount = "1";
-    const name = "Virasat Yatra Conservation";
+function contribute() {
 
-    const upiLink =
-        "upi://pay?pa=" + encodeURIComponent(upiId) +
-        "&pn=" + encodeURIComponent(name) +
-        "&am=" + amount +
-        "&cu=INR";
+  const upiId = "rahulbhise5125-1@oksbi";
+  const amount = "1";
+  const name = "Virasat Yatra Conservation";
 
-    window.location.href = upiLink;
+  const upiLink =
+    "upi://pay?pa=" + encodeURIComponent(upiId) +
+    "&pn=" + encodeURIComponent(name) +
+    "&am=" + amount +
+    "&cu=INR";
+
+  window.location.href = upiLink;
+
 }
 
 </script>
