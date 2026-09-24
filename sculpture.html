@@ -133,8 +133,25 @@ function audioGuide(){
   alert("Audio guide will be connected here.");
 }
 
+<script>
+
+function audioGuide(){
+    alert("Audio Guide will be connected soon.");
+}
+
 function contribute(){
-  alert("₹1 contribution payment page will open here.");
+
+    const upiId = "rahulbhise5125-1@oksbi";
+    const amount = "1";
+    const name = "Virasat Yatra Conservation";
+
+    const upiLink =
+        "upi://pay?pa=" + encodeURIComponent(upiId) +
+        "&pn=" + encodeURIComponent(name) +
+        "&am=" + amount +
+        "&cu=INR";
+
+    window.location.href = upiLink;
 }
 
 </script>
