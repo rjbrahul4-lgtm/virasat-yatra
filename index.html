@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Virasat Yatra</title>
+
+<style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f7f3ea;
+  color: #222;
+}
+
+header {
+  background: #173f5f;
+  color: white;
+  padding: 18px 20px;
+  text-align: center;
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.tagline {
+  margin-top: 6px;
+  font-size: 14px;
+  color: #f3d58b;
+}
+
+nav {
+  background: white;
+  padding: 12px;
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+nav a {
+  text-decoration: none;
+  color: #173f5f;
+  font-size: 13px;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+.hero {
+  padding: 45px 20px;
+  text-align: center;
+  background: linear-gradient(135deg, #173f5f, #285f82);
+  color: white;
+}
+
+.hero h1 {
+  font-size: 38px;
+  margin-bottom: 12px;
+}
+
+.hero p {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
+
+.btn {
+  display: inline-block;
+  background: #d9a441;
+  color: white;
+  padding: 13px 22px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+}
+
+section {
+  padding: 35px 20px;
+}
+
+.title {
+  text-align: center;
+  color: #173f5f;
+  margin-bottom: 25px;
+  font-size: 27px;
+}
+
+.cards {
+  display: grid;
+  gap: 16px;
+}
+
+.card {
+  background: white;
+  padding: 22px;
+  border-radius: 14px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+.icon {
+  font-size: 35px;
+  margin-bottom: 10px;
+}
+
+.card h3 {
+  color: #173f5f;
+  margin-bottom: 8px;
+}
+
+.card p {
+  color: #666;
+  line-height: 1.5;
+  font-size: 14px;
+}
+
+.scan-box {
+  background: #173f5f;
+  color: white;
+  padding: 30px 20px;
+  border-radius: 15px;
+  text-align: center;
+}
+
+.scan-box h2 {
+  margin-bottom: 10px;
+}
+
+.scan-box p {
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.info {
+  background: white;
+  padding: 25px;
+  border-radius: 14px;
+  line-height: 1.7;
+}
+
+footer {
+  background: #102d43;
+  color: white;
+  text-align: center;
+  padding: 25px 15px;
+  margin-top: 20px;
+}
+
+footer p {
+  font-size: 13px;
+  margin: 5px;
+}
+
+@media (min-width: 700px) {
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">🏛️ VIRASAT YATRA</div>
+  <div class="tagline">Digital Heritage & Tourism Platform</div>
+</header>
+
+<nav>
+  <a href="#home">Home</a>
+  <a href="#identify">Identify</a>
+  <a href="#history">History</a>
+  <a href="#map">Map</a>
+  <a href="#report">Report</a>
+  <a href="#guide">Guide</a>
+</nav>
+
+<section class="hero" id="home">
+  <h1>Virasat Yatra</h1>
+
+  <p>
+    Discover India's heritage, identify sculptures,
+    explore history and support conservation through technology.
+  </p>
+
+  <a href="#identify" class="btn">
+    🔍 Identify Sculpture
+  </a>
+</section>
+
+<section id="identify">
+
+  <h2 class="title">Explore Heritage</h2>
+
+  <div class="scan-box">
+
+    <h2>📸 Scan & Identify</h2>
+
+    <p>
+      Scan the QR code placed near a heritage sculpture
+      to discover its history and cultural importance.
+    </p>
+
+    <button class="btn" onclick="identifySculpture()">
+      Scan Sculpture
+    </button>
+
+    <p id="scanResult" style="margin-top:20px;"></p>
+
+  </div>
+
+</section>
+
+<section id="history">
+
+  <h2 class="title">Historical Information</h2>
+
+  <div class="info">
+
+    <h3>🏛️ Sample Heritage Sculpture</h3>
+
+    <p>
+      This section provides historical information about
+      the sculpture, including its origin, period,
+      cultural importance and conservation status.
+    </p>
+
+    <br>
+
+    <button class="btn" onclick="showContribution()">
+      ₹1 Support Conservation
+    </button>
+
+    <p id="payment" style="margin-top:20px;"></p>
+
+  </div>
+
+</section>
+
+<section id="map">
+
+  <h2 class="title">🗺️ Heritage Map</h2>
+
+  <div class="card">
+
+    <div class="icon">📍</div>
+
+    <h3>Explore Heritage Sites</h3>
+
+    <p>
+      Discover nearby forts, temples, sculptures,
+      monuments and other important heritage locations.
+    </p>
+
+  </div>
+
+</section>
+
+<section id="report">
+
+  <h2 class="title">⚠️ Report Damage</h2>
+
+  <div class="card">
+
+    <p>
+      Help protect our heritage by reporting damage
+      or maintenance problems at heritage sites.
+    </p>
+
+    <br>
+
+    <button class="btn" onclick="reportDamage()">
+      Report Damage
+    </button>
+
+  </div>
+
+</section>
+
+<section id="guide">
+
+  <h2 class="title">👥 Guide Booking</h2>
+
+  <div class="card">
+
+    <h3>Local Heritage Guide</h3>
+
+    <p>
+      Connect with local guides and discover
+      the history and culture of heritage sites.
+    </p>
+
+    <br>
+
+    <button class="btn" onclick="bookGuide()">
+      Book a Guide
+    </button>
+
+  </div>
+
+</section>
+
+<footer>
+
+  <h3>🏛️ VIRASAT YATRA</h3>
+
+  <p>Digital Heritage & Tourism Platform</p>
+
+  <p>Explore • Preserve • Support</p>
+
+</footer>
+
+<script>
+
+function identifySculpture() {
+
+  document.getElementById("scanResult").innerHTML =
+    "📷 QR Scanner feature will open here.<br><br>" +
+    "Sample Sculpture Identified: Heritage Sculpture";
+
+}
+
+function showContribution() {
+
+  document.getElementById("payment").innerHTML =
+    "💰 Contribution amount: ₹1<br><br>" +
+    "UPI / QR payment integration will be connected here.";
+
+}
+
+function reportDamage() {
+
+  alert(
+    "Damage reporting feature will allow visitors to submit photos and information."
+  );
+
+}
+
+function bookGuide() {
+
+  alert(
+    "Guide booking feature will allow visitors to select a local heritage guide."
+  );
+
+}
+
+</script>
+
+</body>
+</html>
