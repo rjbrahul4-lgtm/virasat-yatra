@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Virasat Yatra - Heritage</title>
+
+<style>
+
+*{
+  box-sizing:border-box;
+}
+
+body{
+  margin:0;
+  font-family:Arial,sans-serif;
+  background:#f7f3ea;
+  color:#222;
+}
+
+header{
+  background:#173f5f;
+  color:white;
+  text-align:center;
+  padding:25px 15px;
+}
+
+header h1{
+  margin:0;
+  font-size:30px;
+}
+
+header p{
+  color:#f3d58b;
+}
+
+.container{
+  max-width:700px;
+  margin:auto;
+  padding:25px 18px;
+}
+
+.card{
+  background:white;
+  padding:25px;
+  border-radius:15px;
+  box-shadow:0 4px 15px rgba(0,0,0,.10);
+  margin-bottom:20px;
+}
+
+.image{
+  width:100%;
+  height:220px;
+  background:#ddd;
+  border-radius:12px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:70px;
+  margin-bottom:20px;
+}
+
+h2{
+  color:#173f5f;
+}
+
+.info{
+  color:#555;
+  line-height:1.7;
+}
+
+.tag{
+  display:inline-block;
+  background:#d9a441;
+  color:white;
+  padding:8px 14px;
+  border-radius:20px;
+  font-weight:bold;
+}
+
+.btn{
+  display:block;
+  width:100%;
+  padding:15px;
+  margin-top:20px;
+  border:0;
+  border-radius:9px;
+  background:#d9a441;
+  color:white;
+  font-size:16px;
+  font-weight:bold;
+  text-align:center;
+  text-decoration:none;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+<h1>🏛️ VIRASAT YATRA</h1>
+
+<p>Digital Heritage & Tourism Platform</p>
+
+</header>
+
+
+<div class="container">
+
+<div class="card">
+
+<div class="image" id="heritageIcon">
+🏛️
+</div>
+
+<span class="tag" id="heritageType">
+Heritage Site
+</span>
+
+<h2 id="heritageName">
+Heritage Information
+</h2>
+
+<p>
+<b>📍 Location:</b>
+<span id="heritageLocation">
+Maharashtra, India
+</span>
+</p>
+
+<h2>📖 Historical Information</h2>
+
+<p class="info" id="heritageInfo">
+
+This heritage site represents India's rich
+history, culture and architectural heritage.
+
+Detailed information about its origin,
+historical period, cultural importance
+and architecture will be displayed here.
+
+</p>
+
+<h2>🎧 Audio Guide</h2>
+
+<button class="btn" onclick="audioGuide()">
+▶ Listen to Audio Guide
+</button>
+
+<h2>🛡️ Conservation</h2>
+
+<p class="info">
+
+Help preserve India's heritage for
+future generations through responsible
+tourism and community participation.
+
+</p>
+
+<button class="btn" onclick="contribute()">
+₹1 Support Conservation
+</button>
+
+<a href="index.html" class="btn">
+🏠 Back to Home
+</a>
+
+</div>
+
+</div>
+
+
+<script>
+
+function audioGuide(){
+
+  alert("Audio guide will be available soon.");
+
+}
+
+
+function contribute(){
+
+  const upiId = "rahulbhise5125-1@oksbi";
+  const amount = "1";
+  const name = "Virasat Yatra Conservation";
+
+  const upiLink =
+    "upi://pay?pa=" + encodeURIComponent(upiId) +
+    "&pn=" + encodeURIComponent(name) +
+    "&am=" + amount +
+    "&cu=INR";
+
+  window.location.href = upiLink;
+
+}
+
+
+/* QR मधून आलेली माहिती */
+
+const params = new URLSearchParams(window.location.search);
+
+const type = params.get("type");
+
+
+if(type === "temple"){
+
+  document.getElementById("heritageIcon").innerHTML = "🛕";
+
+  document.getElementById("heritageType").innerHTML =
+    "Temple";
+
+  document.getElementById("heritageName").innerHTML =
+    "Sample Heritage Temple";
+
+  document.getElementById("heritageLocation").innerHTML =
+    "Maharashtra, India";
+
+  document.getElementById("heritageInfo").innerHTML =
+    "This temple is an important example of India's religious and architectural heritage. Visitors can learn about its history, architecture, traditions and cultural importance here.";
+
+}
+
+
+else if(type === "village"){
+
+  document.getElementById("heritageIcon").innerHTML = "🏘️";
+
+  document.getElementById("heritageType").innerHTML =
+    "Heritage Village";
+
+  document.getElementById("heritageName").innerHTML =
+    "Sample Heritage Village";
+
+  document.getElementById("heritageLocation").innerHTML =
+    "Maharashtra, India";
+
+  document.getElementById("heritageInfo").innerHTML =
+    "This village represents traditional local culture, architecture, lifestyle, festivals and community heritage.";
+
+}
+
+
+else if(type === "fort"){
+
+  document.getElementById("heritageIcon").innerHTML = "🏰";
+
+  document.getElementById("heritageType").innerHTML =
+    "Fort";
+
+  document.getElementById("heritageName").innerHTML =
+    "Sample Heritage Fort";
+
+  document.getElementById("heritageLocation").innerHTML =
+    "Maharashtra, India";
+
+  document.getElementById("heritageInfo").innerHTML =
+    "This historic fort represents Maharashtra's military and cultural heritage. Visitors can learn about its history, architecture and historical events.";
+
+}
+
+
+else if(type === "cave"){
+
+  document.getElementById("heritageIcon").innerHTML = "🪨";
+
+  document.getElementById("heritageType").innerHTML =
+    "Cave";
+
+  document.getElementById("heritageName").innerHTML =
+    "Sample Heritage Cave";
+
+  document.getElementById("heritageLocation").innerHTML =
+    "Maharashtra, India";
+
+  document.getElementById("heritageInfo").innerHTML =
+    "This cave site represents India's ancient rock-cut architecture and cultural heritage.";
+
+}
+
+
+else if(type === "sculpture"){
+
+  document.getElementById("heritageIcon").innerHTML = "🗿";
+
+  document.getElementById("heritageType").innerHTML =
+    "Sculpture";
+
+  document.getElementById("heritageName").innerHTML =
+    "Sample Heritage Sculpture";
+
+  document.getElementById("heritageLocation").innerHTML =
+    "Maharashtra, India";
+
+  document.getElementById("heritageInfo").innerHTML =
+    "This sculpture represents India's artistic and cultural heritage. Information about its origin, period, artistic style and cultural importance can be displayed here.";
+
+}
+
+</script>
+
+</body>
+</html>
