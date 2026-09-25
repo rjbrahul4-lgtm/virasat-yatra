@@ -147,63 +147,80 @@ of heritage monuments through a small contribution.
 
 function identifySculpture() {
 
+    const result = document.getElementById("scanResult");
     const reader = document.getElementById("reader");
+
+    result.innerHTML = "📷 Camera सुरू करत आहे...";
     reader.innerHTML = "";
 
-    Html5Qrcode.getCameras().then(function(cameras) {
+    if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
+        result.innerHTML = "❌ या browser मध्ये camera access उपलब्ध नाही.";
+        return;
+    }
 
-        if (cameras && cameras.length > 0) {
+    navigator.mediaDevices.getUserMedia({
+        video: {
+            facingMode: { ideal: "environment" }
+        }
+    })
+    .then(function(stream) {
 
-            const cameraId = cameras[cameras.length - 1].id;
-            const scanner = new Html5Qrcode("reader");
+        // Permission मिळाली आहे
+        stream.getTracks().forEach(function(track) {
+            track.stop();
+        });
 
-            scanner.start(
-                cameraId,
-                {
-                    fps: 10,
-                    qrbox: {
-                        width: 250,
-                        height: 250
-                    }
-                },
+        result.innerHTML = "✅ Camera permission मिळाली. QR scanner सुरू करत आहे...";
 
-                function(decodedText) {
-
-                    document.getElementById("scanResult").innerHTML =
-                        "✅ QR Scanned! Opening information...";
-
-                    scanner.stop().then(function() {
-                        window.location.href = decodedText;
-                    });
-
-                },
-
-                function(errorMessage) {
-                    // QR शोधत आहे
-                }
-
-            ).catch(function(error) {
-
-                document.getElementById("scanResult").innerHTML =
-                    "❌ Camera start failed: " + error;
-
-            });
-
-        } else {
-
-            document.getElementById("scanResult").innerHTML =
-                "❌ Camera सापडला नाही.";
-
+        if (typeof Html5Qrcode === "undefined") {
+            result.innerHTML =
+                "❌ QR Scanner library load झाली नाही. Page refresh करा.";
+            return;
         }
 
-    }).catch(function(error) {
+        const scanner = new Html5Qrcode("reader");
 
-        document.getElementById("scanResult").innerHTML =
-            "❌ Camera permission द्या: " + error;
+        scanner.start(
+            { facingMode: "environment" },
+            {
+                fps: 10,
+                qrbox: {
+                    width: 250,
+                    height: 250
+                }
+            },
+
+            function(decodedText) {
+
+                result.innerHTML =
+                    "✅ QR Code सापडला! माहिती उघडत आहे...";
+
+                scanner.stop().then(function() {
+                    window.location.href = decodedText;
+                });
+
+            },
+
+            function(errorMessage) {
+                // QR शोधत आहे
+            }
+
+        ).catch(function(error) {
+
+            result.innerHTML =
+                "❌ Scanner सुरू झाला नाही: " + error;
+
+        });
+
+    })
+
+    .catch(function(error) {
+
+        result.innerHTML =
+            "❌ Camera Permission द्या. Error: " + error.name;
 
     });
 }
-
 
 function audioGuide() {
 
