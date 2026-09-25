@@ -1,1 +1,205 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>Virasat Yatra - Raigad Fort</title>
+
+<style>
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:#f5f5f5;
+    color:#222;
+}
+
+header{
+    background:#111;
+    color:white;
+    padding:18px;
+    text-align:center;
+}
+
+.container{
+    max-width:700px;
+    margin:auto;
+    padding:20px;
+}
+
+.card{
+    background:white;
+    padding:20px;
+    margin-bottom:20px;
+    border-radius:15px;
+    box-shadow:0 3px 12px rgba(0,0,0,0.12);
+}
+
+h1{
+    margin-bottom:5px;
+}
+
+h2{
+    color:#8b0000;
+}
+
+select{
+    width:100%;
+    padding:13px;
+    font-size:16px;
+    border-radius:8px;
+    margin-bottom:20px;
+}
+
+.btn{
+    display:block;
+    text-align:center;
+    background:#8b0000;
+    color:white;
+    padding:14px;
+    border-radius:8px;
+    text-decoration:none;
+    margin-top:15px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    🏛️ VIRASAT YATRA
+</header>
+
+<div class="container">
+
+<div class="card">
+
+<h1 id="placeName">रायगड किल्ला</h1>
+
+<p id="location">📍 महाराष्ट्र, भारत</p>
+
+<select id="language" onchange="changeLanguage()">
+    <option value="mr">मराठी</option>
+    <option value="en">English</option>
+    <option value="hi">हिंदी</option>
+</select>
+
+</div>
+
+<div class="card">
+
+<h2 id="historyTitle">📜 ऐतिहासिक माहिती</h2>
+
+<p id="history">
+रायगड किल्ला हा महाराष्ट्रातील एक प्रसिद्ध ऐतिहासिक किल्ला आहे.
+छत्रपती शिवाजी महाराजांनी रायगडाला स्वराज्याची राजधानी केली.
+इ.स. १६७४ मध्ये रायगडावर छत्रपती शिवाजी महाराजांचा राज्याभिषेक झाला.
+रायगड किल्ला मराठा साम्राज्याच्या इतिहासात अत्यंत महत्त्वाचे स्थान आहे.
+</p>
+
+</div>
+
+<div class="card">
+
+<h2 id="cultureTitle">🏛️ महत्त्व</h2>
+
+<p id="culture">
+रायगड हा महाराष्ट्राच्या इतिहास, संस्कृती आणि स्वराज्याच्या परंपरेचे
+महत्त्वाचे प्रतीक आहे. किल्ल्यावर राजदरबार, बाजारपेठ, जगदीश्वर मंदिर
+आणि इतर ऐतिहासिक वास्तू पाहायला मिळतात.
+</p>
+
+</div>
+
+<div class="card">
+
+<h2 id="audioTitle">🔊 Audio Guide</h2>
+
+<p id="audioText">
+रायगड किल्ल्याची माहिती ऑडिओ स्वरूपात ऐकण्यासाठी येथे सुविधा उपलब्ध केली जाऊ शकते.
+</p>
+
+<a href="#" class="btn" id="audioBtn">
+🔊 Listen Audio
+</a>
+
+</div>
+
+<a href="index.html" class="btn" id="backBtn">
+⬅️ Back to Home
+</a>
+
+</div>
+
+<script>
+
+const data = {
+
+mr:{
+name:"रायगड किल्ला",
+location:"📍 महाराष्ट्र, भारत",
+historyTitle:"📜 ऐतिहासिक माहिती",
+history:"रायगड किल्ला हा महाराष्ट्रातील एक प्रसिद्ध ऐतिहासिक किल्ला आहे. छत्रपती शिवाजी महाराजांनी रायगडाला स्वराज्याची राजधानी केली. इ.स. १६७४ मध्ये रायगडावर छत्रपती शिवाजी महाराजांचा राज्याभिषेक झाला. रायगड किल्ला मराठा साम्राज्याच्या इतिहासात अत्यंत महत्त्वाचे स्थान आहे.",
+cultureTitle:"🏛️ महत्त्व",
+culture:"रायगड हा महाराष्ट्राच्या इतिहास, संस्कृती आणि स्वराज्याच्या परंपरेचे महत्त्वाचे प्रतीक आहे. किल्ल्यावर राजदरबार, बाजारपेठ, जगदीश्वर मंदिर आणि इतर ऐतिहासिक वास्तू पाहायला मिळतात.",
+audioTitle:"🔊 ऑडिओ मार्गदर्शक",
+audioText:"रायगड किल्ल्याची माहिती ऑडिओ स्वरूपात ऐकण्यासाठी येथे सुविधा उपलब्ध केली जाऊ शकते.",
+audioBtn:"🔊 ऑडिओ ऐका",
+back:"⬅️ मुख्य पृष्ठावर जा"
+},
+
+en:{
+name:"Raigad Fort",
+location:"📍 Maharashtra, India",
+historyTitle:"📜 Historical Information",
+history:"Raigad Fort is a famous historical fort in Maharashtra. Chhatrapati Shivaji Maharaj made Raigad the capital of Swarajya. In 1674, the coronation of Chhatrapati Shivaji Maharaj took place at Raigad. The fort has great importance in the history of the Maratha Empire.",
+cultureTitle:"🏛️ Importance",
+culture:"Raigad is an important symbol of Maharashtra's history, culture and the tradition of Swarajya. The fort contains the royal court, marketplace, Jagdishwar Temple and other historical structures.",
+audioTitle:"🔊 Audio Guide",
+audioText:"An audio guide can be provided here to listen to information about Raigad Fort.",
+audioBtn:"🔊 Listen Audio",
+back:"⬅️ Back to Home"
+},
+
+hi:{
+name:"रायगढ़ किला",
+location:"📍 महाराष्ट्र, भारत",
+historyTitle:"📜 ऐतिहासिक जानकारी",
+history:"रायगढ़ किला महाराष्ट्र का एक प्रसिद्ध ऐतिहासिक किला है। छत्रपति शिवाजी महाराज ने रायगढ़ को स्वराज्य की राजधानी बनाया। वर्ष 1674 में रायगढ़ पर छत्रपति शिवाजी महाराज का राज्याभिषेक हुआ। मराठा साम्राज्य के इतिहास में रायगढ़ का महत्वपूर्ण स्थान है।",
+cultureTitle:"🏛️ महत्व",
+culture:"रायगढ़ महाराष्ट्र के इतिहास, संस्कृति और स्वराज्य की परंपरा का महत्वपूर्ण प्रतीक है। किले में राजदरबार, बाजार, जगदीश्वर मंदिर और अन्य ऐतिहासिक संरचनाएँ हैं।",
+audioTitle:"🔊 ऑडियो गाइड",
+audioText:"रायगढ़ किले की जानकारी सुनने के लिए यहाँ ऑडियो गाइड की सुविधा उपलब्ध की जा सकती है।",
+audioBtn:"🔊 ऑडियो सुनें",
+back:"⬅️ मुख्य पृष्ठ पर जाएँ"
+}
+
+};
+
+function changeLanguage(){
+
+    const lang = document.getElementById("language").value;
+    const d = data[lang];
+
+    document.documentElement.lang = lang;
+
+    document.getElementById("placeName").innerText = d.name;
+    document.getElementById("location").innerText = d.location;
+
+    document.getElementById("historyTitle").innerText = d.historyTitle;
+    document.getElementById("history").innerText = d.history;
+
+    document.getElementById("cultureTitle").innerText = d.cultureTitle;
+    document.getElementById("culture").innerText = d.culture;
+
+    document.getElementById("audioTitle").innerText = d.audioTitle;
+    document.getElementById("audioText").innerText = d.audioText;
+    document.getElementById("audioBtn").innerText = d.audioBtn;
+
+    document.getElementById("backBtn").innerText = d.back;
+}
+
+</script>
+
+</body>
+</html>
