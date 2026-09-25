@@ -133,221 +133,260 @@ select{
 
 <script>
 
-<script>
+const places = {
 
-const data = {
-
-raigad: {
-
+"raigad-rajdarbar": {
 mr:{
-name:"रायगड किल्ला",
-location:"📍 महाराष्ट्र, भारत",
+name:"राजदरबार",
+location:"📍 रायगड किल्ला",
 historyTitle:"📜 ऐतिहासिक माहिती",
-history:"रायगड किल्ला हा महाराष्ट्रातील प्रसिद्ध ऐतिहासिक किल्ला आहे. छत्रपती शिवाजी महाराजांनी रायगडाला स्वराज्याची राजधानी केली. इ.स. १६७४ मध्ये रायगडावर छत्रपती शिवाजी महाराजांचा राज्याभिषेक झाला.",
+history:"राजदरबार हा रायगड किल्ल्यावरील महत्त्वाचा ऐतिहासिक भाग होता. येथे स्वराज्याच्या प्रशासनाशी संबंधित महत्त्वाची कामे होत असत.",
 cultureTitle:"🏛️ महत्त्व",
-culture:"रायगड हा महाराष्ट्राच्या इतिहास, संस्कृती आणि स्वराज्याच्या परंपरेचे महत्त्वाचे प्रतीक आहे. किल्ल्यावर राजदरबार, बाजारपेठ, जगदीश्वर मंदिर आणि इतर ऐतिहासिक वास्तू आहेत.",
+culture:"राजदरबार रायगडच्या राजकीय आणि प्रशासकीय इतिहासाचे महत्त्वाचे प्रतीक आहे.",
 audioTitle:"🔊 ऑडिओ मार्गदर्शक",
-audioText:"रायगड किल्ल्याची माहिती ऑडिओ स्वरूपात ऐकण्यासाठी येथे सुविधा उपलब्ध केली जाऊ शकते.",
+audioText:"राजदरबाराची माहिती ऑडिओ स्वरूपात ऐकण्यासाठी सुविधा उपलब्ध केली जाऊ शकते.",
 audioBtn:"🔊 ऑडिओ ऐका",
 back:"⬅️ मुख्य पृष्ठावर जा"
 },
-
 en:{
-name:"Raigad Fort",
-location:"📍 Maharashtra, India",
+name:"Royal Court",
+location:"📍 Raigad Fort",
 historyTitle:"📜 Historical Information",
-history:"Raigad Fort is a famous historical fort in Maharashtra. Chhatrapati Shivaji Maharaj made Raigad the capital of Swarajya. His coronation took place at Raigad in 1674.",
+history:"The Royal Court was an important part of Raigad Fort and was associated with the administration of Swarajya.",
 cultureTitle:"🏛️ Importance",
-culture:"Raigad is an important symbol of Maharashtra's history, culture and the tradition of Swarajya. The fort contains the royal court, marketplace, Jagdishwar Temple and other historical structures.",
+culture:"The Royal Court represents the political and administrative history of Raigad.",
 audioTitle:"🔊 Audio Guide",
-audioText:"An audio guide can be provided here to listen to information about Raigad Fort.",
+audioText:"An audio guide can be provided here.",
 audioBtn:"🔊 Listen Audio",
 back:"⬅️ Back to Home"
 },
-
 hi:{
-name:"रायगढ़ किला",
-location:"📍 महाराष्ट्र, भारत",
+name:"राजदरबार",
+location:"📍 रायगढ़ किला",
 historyTitle:"📜 ऐतिहासिक जानकारी",
-history:"रायगढ़ किला महाराष्ट्र का प्रसिद्ध ऐतिहासिक किला है। छत्रपति शिवाजी महाराज ने रायगढ़ को स्वराज्य की राजधानी बनाया। वर्ष 1674 में रायगढ़ पर उनका राज्याभिषेक हुआ।",
+history:"राजदरबार रायगढ़ किले का एक महत्वपूर्ण ऐतिहासिक भाग था। यहाँ स्वराज्य के प्रशासन से संबंधित महत्वपूर्ण कार्य होते थे।",
 cultureTitle:"🏛️ महत्व",
-culture:"रायगढ़ महाराष्ट्र के इतिहास, संस्कृति और स्वराज्य की परंपरा का महत्वपूर्ण प्रतीक है। किले में राजदरबार, बाजार, जगदीश्वर मंदिर और अन्य ऐतिहासिक संरचनाएँ हैं।",
+culture:"राजदरबार रायगढ़ के राजनीतिक और प्रशासनिक इतिहास का महत्वपूर्ण प्रतीक है।",
 audioTitle:"🔊 ऑडियो गाइड",
-audioText:"रायगढ़ किले की जानकारी सुनने के लिए यहाँ ऑडियो गाइड की सुविधा उपलब्ध की जा सकती है।",
+audioText:"राजदरबार की जानकारी सुनने के लिए ऑडियो सुविधा उपलब्ध की जा सकती है।",
 audioBtn:"🔊 ऑडियो सुनें",
 back:"⬅️ मुख्य पृष्ठ पर जाएँ"
 }
-
 },
 
-temple: {
-
+"raigad-jagdishwar": {
 mr:{
-name:"प्राचीन मंदिर",
-location:"📍 महाराष्ट्र, भारत",
+name:"जगदीश्वर मंदिर",
+location:"📍 रायगड किल्ला",
 historyTitle:"📜 ऐतिहासिक माहिती",
-history:"हे प्राचीन मंदिर स्थानिक इतिहास आणि धार्मिक परंपरेचा महत्त्वाचा भाग आहे. मंदिराची वास्तुकला आणि शिल्पकला त्या काळातील सांस्कृतिक वारसा दर्शवते.",
-cultureTitle:"🏛️ सांस्कृतिक महत्त्व",
-culture:"मंदिर स्थानिक संस्कृती, श्रद्धा आणि परंपरा जपण्याचे महत्त्वाचे केंद्र आहे.",
+history:"जगदीश्वर मंदिर हे रायगड किल्ल्यावरील प्रसिद्ध ऐतिहासिक मंदिर आहे. हे मंदिर रायगडच्या धार्मिक आणि सांस्कृतिक वारशाचा महत्त्वाचा भाग आहे.",
+cultureTitle:"🏛️ महत्त्व",
+culture:"जगदीश्वर मंदिर रायगडच्या धार्मिक आणि सांस्कृतिक इतिहासाचे प्रतीक आहे.",
 audioTitle:"🔊 ऑडिओ मार्गदर्शक",
-audioText:"मंदिराची माहिती ऑडिओ स्वरूपात ऐकण्यासाठी येथे सुविधा उपलब्ध केली जाऊ शकते.",
+audioText:"जगदीश्वर मंदिराची माहिती ऐकण्यासाठी ऑडिओ सुविधा उपलब्ध केली जाऊ शकते.",
 audioBtn:"🔊 ऑडिओ ऐका",
 back:"⬅️ मुख्य पृष्ठावर जा"
 },
-
 en:{
-name:"Ancient Temple",
-location:"📍 Maharashtra, India",
+name:"Jagdishwar Temple",
+location:"📍 Raigad Fort",
 historyTitle:"📜 Historical Information",
-history:"This ancient temple is an important part of local history and religious traditions. Its architecture and sculptures represent the cultural heritage of the period.",
-cultureTitle:"🏛️ Cultural Importance",
-culture:"The temple is an important centre for preserving local culture, traditions and heritage.",
+history:"Jagdishwar Temple is a famous historic temple at Raigad Fort and an important part of its religious and cultural heritage.",
+cultureTitle:"🏛️ Importance",
+culture:"The temple represents the religious and cultural heritage of Raigad.",
 audioTitle:"🔊 Audio Guide",
-audioText:"An audio guide can be provided here to listen to information about the temple.",
+audioText:"An audio guide can be provided here.",
 audioBtn:"🔊 Listen Audio",
 back:"⬅️ Back to Home"
 },
-
 hi:{
-name:"प्राचीन मंदिर",
-location:"📍 महाराष्ट्र, भारत",
+name:"जगदीश्वर मंदिर",
+location:"📍 रायगढ़ किला",
 historyTitle:"📜 ऐतिहासिक जानकारी",
-history:"यह प्राचीन मंदिर स्थानीय इतिहास और धार्मिक परंपराओं का महत्वपूर्ण हिस्सा है। इसकी वास्तुकला और मूर्तियाँ उस समय की सांस्कृतिक विरासत को दर्शाती हैं।",
-cultureTitle:"🏛️ सांस्कृतिक महत्व",
-culture:"यह मंदिर स्थानीय संस्कृति, परंपराओं और विरासत को संरक्षित करने का महत्वपूर्ण केंद्र है।",
+history:"जगदीश्वर मंदिर रायगढ़ किले का प्रसिद्ध ऐतिहासिक मंदिर है। यह रायगढ़ की धार्मिक और सांस्कृतिक विरासत का महत्वपूर्ण हिस्सा है।",
+cultureTitle:"🏛️ महत्व",
+culture:"यह मंदिर रायगढ़ की धार्मिक और सांस्कृतिक विरासत का प्रतीक है।",
 audioTitle:"🔊 ऑडियो गाइड",
-audioText:"मंदिर की जानकारी सुनने के लिए यहाँ ऑडियो गाइड की सुविधा उपलब्ध की जा सकती है।",
+audioText:"मंदिर की जानकारी सुनने के लिए ऑडियो सुविधा उपलब्ध की जा सकती है।",
 audioBtn:"🔊 ऑडियो सुनें",
 back:"⬅️ मुख्य पृष्ठ पर जाएँ"
 }
-
 },
 
-sculpture: {
-
+"raigad-hirkani": {
 mr:{
-name:"ऐतिहासिक मूर्ती",
-location:"📍 महाराष्ट्र, भारत",
+name:"हिरकणी बुरुज",
+location:"📍 रायगड किल्ला",
 historyTitle:"📜 ऐतिहासिक माहिती",
-history:"ही ऐतिहासिक मूर्ती आपल्या सांस्कृतिक आणि कलात्मक वारशाचा महत्त्वाचा भाग आहे. मूर्तीची रचना आणि शिल्पकला त्या काळातील कला आणि संस्कृतीची माहिती देते.",
-cultureTitle:"🏛️ सांस्कृतिक महत्त्व",
-culture:"ही मूर्ती स्थानिक इतिहास, कला आणि सांस्कृतिक वारसा समजून घेण्यासाठी महत्त्वाची आहे.",
+history:"हिरकणी बुरुज हा रायगड किल्ल्यावरील प्रसिद्ध बुरुज आहे. हिरकणीच्या धैर्याशी संबंधित कथा महाराष्ट्रात प्रसिद्ध आहे.",
+cultureTitle:"🏛️ महत्त्व",
+culture:"हिरकणी बुरुज हा रायगडच्या लोकपरंपरा आणि इतिहासाशी जोडलेला महत्त्वाचा वारसा आहे.",
 audioTitle:"🔊 ऑडिओ मार्गदर्शक",
-audioText:"मूर्तीची माहिती ऑडिओ स्वरूपात ऐकण्यासाठी येथे सुविधा उपलब्ध केली जाऊ शकते.",
+audioText:"हिरकणी बुरुजाची माहिती ऐकण्यासाठी ऑडिओ सुविधा उपलब्ध केली जाऊ शकते.",
 audioBtn:"🔊 ऑडिओ ऐका",
 back:"⬅️ मुख्य पृष्ठावर जा"
 },
-
 en:{
-name:"Heritage Sculpture",
-location:"📍 Maharashtra, India",
+name:"Hirkani Bastion",
+location:"📍 Raigad Fort",
 historyTitle:"📜 Historical Information",
-history:"This heritage sculpture is an important part of India's cultural and artistic heritage. Its design and craftsmanship provide information about the art and culture of its period.",
-cultureTitle:"🏛️ Cultural Importance",
-culture:"The sculpture helps visitors understand local history, art and cultural heritage.",
+history:"Hirkani Bastion is a famous bastion at Raigad Fort. The story associated with Hirkani is well known in Maharashtra.",
+cultureTitle:"🏛️ Importance",
+culture:"Hirkani Bastion is an important part of the local historical and cultural heritage of Raigad.",
 audioTitle:"🔊 Audio Guide",
-audioText:"An audio guide can be provided here to listen to information about the sculpture.",
+audioText:"An audio guide can be provided here.",
 audioBtn:"🔊 Listen Audio",
 back:"⬅️ Back to Home"
 },
-
 hi:{
-name:"ऐतिहासिक मूर्ति",
-location:"📍 महाराष्ट्र, भारत",
+name:"हिरकणी बुर्ज",
+location:"📍 रायगढ़ किला",
 historyTitle:"📜 ऐतिहासिक जानकारी",
-history:"यह ऐतिहासिक मूर्ति भारत की सांस्कृतिक और कलात्मक विरासत का महत्वपूर्ण हिस्सा है। इसकी रचना और शिल्पकला उस समय की कला और संस्कृति की जानकारी देती है।",
-cultureTitle:"🏛️ सांस्कृतिक महत्व",
-culture:"यह मूर्ति स्थानीय इतिहास, कला और सांस्कृतिक विरासत को समझने में मदद करती है।",
+history:"हिरकणी बुर्ज रायगढ़ किले का प्रसिद्ध बुर्ज है। हिरकणी के साहस से जुड़ी कहानी महाराष्ट्र में प्रसिद्ध है।",
+cultureTitle:"🏛️ महत्व",
+culture:"हिरकणी बुर्ज रायगढ़ की स्थानीय ऐतिहासिक और सांस्कृतिक विरासत का महत्वपूर्ण हिस्सा है।",
 audioTitle:"🔊 ऑडियो गाइड",
-audioText:"मूर्ति की जानकारी सुनने के लिए यहाँ ऑडियो गाइड की सुविधा उपलब्ध की जा सकती है।",
+audioText:"हिरकणी बुर्ज की जानकारी सुनने के लिए ऑडियो सुविधा उपलब्ध की जा सकती है।",
 audioBtn:"🔊 ऑडियो सुनें",
 back:"⬅️ मुख्य पृष्ठ पर जाएँ"
 }
-
 },
 
-village: {
-
+"raigad-bazaar": {
 mr:{
-name:"ऐतिहासिक गाव",
-location:"📍 महाराष्ट्र, भारत",
+name:"रायगड बाजारपेठ",
+location:"📍 रायगड किल्ला",
 historyTitle:"📜 ऐतिहासिक माहिती",
-history:"हे गाव स्थानिक इतिहास, परंपरा आणि संस्कृतीचा महत्त्वाचा भाग आहे. गावातील वास्तू, परंपरा आणि लोकजीवनातून स्थानिक वारशाची माहिती मिळते.",
-cultureTitle:"🏛️ सांस्कृतिक महत्त्व",
-culture:"गावातील पारंपरिक जीवनशैली, कला आणि उत्सव स्थानिक सांस्कृतिक वारसा जपतात.",
+history:"रायगड किल्ल्यावरील बाजारपेठ ही किल्ल्याच्या दैनंदिन जीवनाचा आणि व्यापाराचा महत्त्वाचा भाग होती.",
+cultureTitle:"🏛️ महत्त्व",
+culture:"बाजारपेठ रायगडवरील तत्कालीन आर्थिक आणि सामाजिक जीवनाची माहिती देते.",
 audioTitle:"🔊 ऑडिओ मार्गदर्शक",
-audioText:"गावाची माहिती ऑडिओ स्वरूपात ऐकण्यासाठी येथे सुविधा उपलब्ध केली जाऊ शकते.",
+audioText:"रायगड बाजारपेठेची माहिती ऐकण्यासाठी ऑडिओ सुविधा उपलब्ध केली जाऊ शकते.",
 audioBtn:"🔊 ऑडिओ ऐका",
 back:"⬅️ मुख्य पृष्ठावर जा"
 },
-
 en:{
-name:"Heritage Village",
-location:"📍 Maharashtra, India",
+name:"Raigad Marketplace",
+location:"📍 Raigad Fort",
 historyTitle:"📜 Historical Information",
-history:"This village is an important part of local history, traditions and culture. Its architecture, traditions and community life represent local heritage.",
-cultureTitle:"🏛️ Cultural Importance",
-culture:"Traditional lifestyle, arts and festivals help preserve the cultural heritage of the village.",
+history:"The marketplace at Raigad Fort was an important part of daily life and trade at the fort.",
+cultureTitle:"🏛️ Importance",
+culture:"The marketplace provides an insight into the economic and social life of Raigad.",
 audioTitle:"🔊 Audio Guide",
-audioText:"An audio guide can be provided here to listen to information about the village.",
+audioText:"An audio guide can be provided here.",
 audioBtn:"🔊 Listen Audio",
 back:"⬅️ Back to Home"
 },
-
 hi:{
-name:"ऐतिहासिक गाँव",
-location:"📍 महाराष्ट्र, भारत",
+name:"रायगढ़ बाजार",
+location:"📍 रायगढ़ किला",
 historyTitle:"📜 ऐतिहासिक जानकारी",
-history:"यह गाँव स्थानीय इतिहास, परंपराओं और संस्कृति का महत्वपूर्ण हिस्सा है। गाँव की वास्तुकला, परंपराएँ और जीवनशैली स्थानीय विरासत को दर्शाती हैं।",
-cultureTitle:"🏛️ सांस्कृतिक महत्व",
-culture:"पारंपरिक जीवनशैली, कला और त्योहार गाँव की सांस्कृतिक विरासत को संरक्षित करते हैं।",
+history:"रायगढ़ किले का बाजार किले के दैनिक जीवन और व्यापार का महत्वपूर्ण हिस्सा था।",
+cultureTitle:"🏛️ महत्व",
+culture:"बाजार रायगढ़ के तत्कालीन आर्थिक और सामाजिक जीवन की जानकारी देता है।",
 audioTitle:"🔊 ऑडियो गाइड",
-audioText:"गाँव की जानकारी सुनने के लिए यहाँ ऑडियो गाइड की सुविधा उपलब्ध की जा सकती है।",
+audioText:"बाजार की जानकारी सुनने के लिए ऑडियो सुविधा उपलब्ध की जा सकती है।",
 audioBtn:"🔊 ऑडियो सुनें",
 back:"⬅️ मुख्य पृष्ठ पर जाएँ"
 }
+},
 
+"raigad-mahadarwaja": {
+mr:{
+name:"महादरवाजा",
+location:"📍 रायगड किल्ला",
+historyTitle:"📜 ऐतिहासिक माहिती",
+history:"महादरवाजा हा रायगड किल्ल्याचा महत्त्वाचा प्रवेशद्वार आहे. किल्ल्याच्या संरक्षणाच्या दृष्टीने त्याचे विशेष महत्त्व होते.",
+cultureTitle:"🏛️ महत्त्व",
+culture:"महादरवाजा रायगडच्या संरक्षणात्मक वास्तुकलेचे महत्त्वाचे उदाहरण आहे.",
+audioTitle:"🔊 ऑडिओ मार्गदर्शक",
+audioText:"महादरवाजाची माहिती ऐकण्यासाठी ऑडिओ सुविधा उपलब्ध केली जाऊ शकते.",
+audioBtn:"🔊 ऑडिओ ऐका",
+back:"⬅️ मुख्य पृष्ठावर जा"
+},
+en:{
+name:"Maha Darwaja",
+location:"📍 Raigad Fort",
+historyTitle:"📜 Historical Information",
+history:"Maha Darwaja is an important entrance of Raigad Fort and played an important role in the fort's defence.",
+cultureTitle:"🏛️ Importance",
+culture:"Maha Darwaja is an important example of the defensive architecture of Raigad.",
+audioTitle:"🔊 Audio Guide",
+audioText:"An audio guide can be provided here.",
+audioBtn:"🔊 Listen Audio",
+back:"⬅️ Back to Home"
+},
+hi:{
+name:"महादरवाजा",
+location:"📍 रायगढ़ किला",
+historyTitle:"📜 ऐतिहासिक जानकारी",
+history:"महादरवाजा रायगढ़ किले का एक महत्वपूर्ण प्रवेशद्वार है। किले की सुरक्षा में इसका महत्वपूर्ण स्थान था।",
+cultureTitle:"🏛️ महत्व",
+culture:"महादरवाजा रायगढ़ की सुरक्षा वास्तुकला का महत्वपूर्ण उदाहरण है।",
+audioTitle:"🔊 ऑडियो गाइड",
+audioText:"महादरवाजे की जानकारी सुनने के लिए ऑडियो सुविधा उपलब्ध की जा सकती है।",
+audioBtn:"🔊 ऑडियो सुनें",
+back:"⬅️ मुख्य पृष्ठ पर जाएँ"
+}
 }
 
 };
 
 
-function changeLanguage(){
+function loadPlace(){
+
+    const params = new URLSearchParams(window.location.search);
+
+    const id = params.get("id") || "raigad-rajdarbar";
 
     const lang = document.getElementById("language").value;
 
-    const urlParams = new URLSearchParams(window.location.search);
+    const place = places[id];
 
-    const type = urlParams.get("type") || "raigad";
+    if(!place){
+        document.getElementById("placeName").innerText =
+        "माहिती उपलब्ध नाही";
+        return;
+    }
 
-    const place = data[type] || data.raigad;
+    const info = place[lang];
 
-    const d = place[lang];
+    document.getElementById("placeName").innerText = info.name;
+    document.getElementById("location").innerText = info.location;
 
-    document.documentElement.lang = lang;
+    document.getElementById("historyTitle").innerText =
+    info.historyTitle;
 
-    document.getElementById("placeName").innerText = d.name;
-    document.getElementById("location").innerText = d.location;
+    document.getElementById("history").innerText =
+    info.history;
 
-    document.getElementById("historyTitle").innerText = d.historyTitle;
-    document.getElementById("history").innerText = d.history;
+    document.getElementById("cultureTitle").innerText =
+    info.cultureTitle;
 
-    document.getElementById("cultureTitle").innerText = d.cultureTitle;
-    document.getElementById("culture").innerText = d.culture;
+    document.getElementById("culture").innerText =
+    info.culture;
 
-    document.getElementById("audioTitle").innerText = d.audioTitle;
-    document.getElementById("audioText").innerText = d.audioText;
+    document.getElementById("audioTitle").innerText =
+    info.audioTitle;
 
-    document.getElementById("audioBtn").innerText = d.audioBtn;
-    document.getElementById("backBtn").innerText = d.back;
+    document.getElementById("audioText").innerText =
+    info.audioText;
+
+    document.getElementById("audioBtn").innerText =
+    info.audioBtn;
+
+    document.getElementById("backBtn").innerText =
+    info.back;
 }
 
 
-changeLanguage();
+function changeLanguage(){
+    loadPlace();
+}
+
+
+loadPlace();
 
 </script>
-
-</script>
-
 </body>
 </html>
