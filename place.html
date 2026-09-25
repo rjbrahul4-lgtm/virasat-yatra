@@ -133,15 +133,19 @@ select{
 
 <script>
 
+<script>
+
 const data = {
+
+raigad: {
 
 mr:{
 name:"रायगड किल्ला",
 location:"📍 महाराष्ट्र, भारत",
 historyTitle:"📜 ऐतिहासिक माहिती",
-history:"रायगड किल्ला हा महाराष्ट्रातील एक प्रसिद्ध ऐतिहासिक किल्ला आहे. छत्रपती शिवाजी महाराजांनी रायगडाला स्वराज्याची राजधानी केली. इ.स. १६७४ मध्ये रायगडावर छत्रपती शिवाजी महाराजांचा राज्याभिषेक झाला. रायगड किल्ला मराठा साम्राज्याच्या इतिहासात अत्यंत महत्त्वाचे स्थान आहे.",
+history:"रायगड किल्ला हा महाराष्ट्रातील प्रसिद्ध ऐतिहासिक किल्ला आहे. छत्रपती शिवाजी महाराजांनी रायगडाला स्वराज्याची राजधानी केली. इ.स. १६७४ मध्ये रायगडावर छत्रपती शिवाजी महाराजांचा राज्याभिषेक झाला.",
 cultureTitle:"🏛️ महत्त्व",
-culture:"रायगड हा महाराष्ट्राच्या इतिहास, संस्कृती आणि स्वराज्याच्या परंपरेचे महत्त्वाचे प्रतीक आहे. किल्ल्यावर राजदरबार, बाजारपेठ, जगदीश्वर मंदिर आणि इतर ऐतिहासिक वास्तू पाहायला मिळतात.",
+culture:"रायगड हा महाराष्ट्राच्या इतिहास, संस्कृती आणि स्वराज्याच्या परंपरेचे महत्त्वाचे प्रतीक आहे. किल्ल्यावर राजदरबार, बाजारपेठ, जगदीश्वर मंदिर आणि इतर ऐतिहासिक वास्तू आहेत.",
 audioTitle:"🔊 ऑडिओ मार्गदर्शक",
 audioText:"रायगड किल्ल्याची माहिती ऑडिओ स्वरूपात ऐकण्यासाठी येथे सुविधा उपलब्ध केली जाऊ शकते.",
 audioBtn:"🔊 ऑडिओ ऐका",
@@ -152,7 +156,7 @@ en:{
 name:"Raigad Fort",
 location:"📍 Maharashtra, India",
 historyTitle:"📜 Historical Information",
-history:"Raigad Fort is a famous historical fort in Maharashtra. Chhatrapati Shivaji Maharaj made Raigad the capital of Swarajya. In 1674, the coronation of Chhatrapati Shivaji Maharaj took place at Raigad. The fort has great importance in the history of the Maratha Empire.",
+history:"Raigad Fort is a famous historical fort in Maharashtra. Chhatrapati Shivaji Maharaj made Raigad the capital of Swarajya. His coronation took place at Raigad in 1674.",
 cultureTitle:"🏛️ Importance",
 culture:"Raigad is an important symbol of Maharashtra's history, culture and the tradition of Swarajya. The fort contains the royal court, marketplace, Jagdishwar Temple and other historical structures.",
 audioTitle:"🔊 Audio Guide",
@@ -165,7 +169,7 @@ hi:{
 name:"रायगढ़ किला",
 location:"📍 महाराष्ट्र, भारत",
 historyTitle:"📜 ऐतिहासिक जानकारी",
-history:"रायगढ़ किला महाराष्ट्र का एक प्रसिद्ध ऐतिहासिक किला है। छत्रपति शिवाजी महाराज ने रायगढ़ को स्वराज्य की राजधानी बनाया। वर्ष 1674 में रायगढ़ पर छत्रपति शिवाजी महाराज का राज्याभिषेक हुआ। मराठा साम्राज्य के इतिहास में रायगढ़ का महत्वपूर्ण स्थान है।",
+history:"रायगढ़ किला महाराष्ट्र का प्रसिद्ध ऐतिहासिक किला है। छत्रपति शिवाजी महाराज ने रायगढ़ को स्वराज्य की राजधानी बनाया। वर्ष 1674 में रायगढ़ पर उनका राज्याभिषेक हुआ।",
 cultureTitle:"🏛️ महत्व",
 culture:"रायगढ़ महाराष्ट्र के इतिहास, संस्कृति और स्वराज्य की परंपरा का महत्वपूर्ण प्रतीक है। किले में राजदरबार, बाजार, जगदीश्वर मंदिर और अन्य ऐतिहासिक संरचनाएँ हैं।",
 audioTitle:"🔊 ऑडियो गाइड",
@@ -174,12 +178,151 @@ audioBtn:"🔊 ऑडियो सुनें",
 back:"⬅️ मुख्य पृष्ठ पर जाएँ"
 }
 
+},
+
+temple: {
+
+mr:{
+name:"प्राचीन मंदिर",
+location:"📍 महाराष्ट्र, भारत",
+historyTitle:"📜 ऐतिहासिक माहिती",
+history:"हे प्राचीन मंदिर स्थानिक इतिहास आणि धार्मिक परंपरेचा महत्त्वाचा भाग आहे. मंदिराची वास्तुकला आणि शिल्पकला त्या काळातील सांस्कृतिक वारसा दर्शवते.",
+cultureTitle:"🏛️ सांस्कृतिक महत्त्व",
+culture:"मंदिर स्थानिक संस्कृती, श्रद्धा आणि परंपरा जपण्याचे महत्त्वाचे केंद्र आहे.",
+audioTitle:"🔊 ऑडिओ मार्गदर्शक",
+audioText:"मंदिराची माहिती ऑडिओ स्वरूपात ऐकण्यासाठी येथे सुविधा उपलब्ध केली जाऊ शकते.",
+audioBtn:"🔊 ऑडिओ ऐका",
+back:"⬅️ मुख्य पृष्ठावर जा"
+},
+
+en:{
+name:"Ancient Temple",
+location:"📍 Maharashtra, India",
+historyTitle:"📜 Historical Information",
+history:"This ancient temple is an important part of local history and religious traditions. Its architecture and sculptures represent the cultural heritage of the period.",
+cultureTitle:"🏛️ Cultural Importance",
+culture:"The temple is an important centre for preserving local culture, traditions and heritage.",
+audioTitle:"🔊 Audio Guide",
+audioText:"An audio guide can be provided here to listen to information about the temple.",
+audioBtn:"🔊 Listen Audio",
+back:"⬅️ Back to Home"
+},
+
+hi:{
+name:"प्राचीन मंदिर",
+location:"📍 महाराष्ट्र, भारत",
+historyTitle:"📜 ऐतिहासिक जानकारी",
+history:"यह प्राचीन मंदिर स्थानीय इतिहास और धार्मिक परंपराओं का महत्वपूर्ण हिस्सा है। इसकी वास्तुकला और मूर्तियाँ उस समय की सांस्कृतिक विरासत को दर्शाती हैं।",
+cultureTitle:"🏛️ सांस्कृतिक महत्व",
+culture:"यह मंदिर स्थानीय संस्कृति, परंपराओं और विरासत को संरक्षित करने का महत्वपूर्ण केंद्र है।",
+audioTitle:"🔊 ऑडियो गाइड",
+audioText:"मंदिर की जानकारी सुनने के लिए यहाँ ऑडियो गाइड की सुविधा उपलब्ध की जा सकती है।",
+audioBtn:"🔊 ऑडियो सुनें",
+back:"⬅️ मुख्य पृष्ठ पर जाएँ"
+}
+
+},
+
+sculpture: {
+
+mr:{
+name:"ऐतिहासिक मूर्ती",
+location:"📍 महाराष्ट्र, भारत",
+historyTitle:"📜 ऐतिहासिक माहिती",
+history:"ही ऐतिहासिक मूर्ती आपल्या सांस्कृतिक आणि कलात्मक वारशाचा महत्त्वाचा भाग आहे. मूर्तीची रचना आणि शिल्पकला त्या काळातील कला आणि संस्कृतीची माहिती देते.",
+cultureTitle:"🏛️ सांस्कृतिक महत्त्व",
+culture:"ही मूर्ती स्थानिक इतिहास, कला आणि सांस्कृतिक वारसा समजून घेण्यासाठी महत्त्वाची आहे.",
+audioTitle:"🔊 ऑडिओ मार्गदर्शक",
+audioText:"मूर्तीची माहिती ऑडिओ स्वरूपात ऐकण्यासाठी येथे सुविधा उपलब्ध केली जाऊ शकते.",
+audioBtn:"🔊 ऑडिओ ऐका",
+back:"⬅️ मुख्य पृष्ठावर जा"
+},
+
+en:{
+name:"Heritage Sculpture",
+location:"📍 Maharashtra, India",
+historyTitle:"📜 Historical Information",
+history:"This heritage sculpture is an important part of India's cultural and artistic heritage. Its design and craftsmanship provide information about the art and culture of its period.",
+cultureTitle:"🏛️ Cultural Importance",
+culture:"The sculpture helps visitors understand local history, art and cultural heritage.",
+audioTitle:"🔊 Audio Guide",
+audioText:"An audio guide can be provided here to listen to information about the sculpture.",
+audioBtn:"🔊 Listen Audio",
+back:"⬅️ Back to Home"
+},
+
+hi:{
+name:"ऐतिहासिक मूर्ति",
+location:"📍 महाराष्ट्र, भारत",
+historyTitle:"📜 ऐतिहासिक जानकारी",
+history:"यह ऐतिहासिक मूर्ति भारत की सांस्कृतिक और कलात्मक विरासत का महत्वपूर्ण हिस्सा है। इसकी रचना और शिल्पकला उस समय की कला और संस्कृति की जानकारी देती है।",
+cultureTitle:"🏛️ सांस्कृतिक महत्व",
+culture:"यह मूर्ति स्थानीय इतिहास, कला और सांस्कृतिक विरासत को समझने में मदद करती है।",
+audioTitle:"🔊 ऑडियो गाइड",
+audioText:"मूर्ति की जानकारी सुनने के लिए यहाँ ऑडियो गाइड की सुविधा उपलब्ध की जा सकती है।",
+audioBtn:"🔊 ऑडियो सुनें",
+back:"⬅️ मुख्य पृष्ठ पर जाएँ"
+}
+
+},
+
+village: {
+
+mr:{
+name:"ऐतिहासिक गाव",
+location:"📍 महाराष्ट्र, भारत",
+historyTitle:"📜 ऐतिहासिक माहिती",
+history:"हे गाव स्थानिक इतिहास, परंपरा आणि संस्कृतीचा महत्त्वाचा भाग आहे. गावातील वास्तू, परंपरा आणि लोकजीवनातून स्थानिक वारशाची माहिती मिळते.",
+cultureTitle:"🏛️ सांस्कृतिक महत्त्व",
+culture:"गावातील पारंपरिक जीवनशैली, कला आणि उत्सव स्थानिक सांस्कृतिक वारसा जपतात.",
+audioTitle:"🔊 ऑडिओ मार्गदर्शक",
+audioText:"गावाची माहिती ऑडिओ स्वरूपात ऐकण्यासाठी येथे सुविधा उपलब्ध केली जाऊ शकते.",
+audioBtn:"🔊 ऑडिओ ऐका",
+back:"⬅️ मुख्य पृष्ठावर जा"
+},
+
+en:{
+name:"Heritage Village",
+location:"📍 Maharashtra, India",
+historyTitle:"📜 Historical Information",
+history:"This village is an important part of local history, traditions and culture. Its architecture, traditions and community life represent local heritage.",
+cultureTitle:"🏛️ Cultural Importance",
+culture:"Traditional lifestyle, arts and festivals help preserve the cultural heritage of the village.",
+audioTitle:"🔊 Audio Guide",
+audioText:"An audio guide can be provided here to listen to information about the village.",
+audioBtn:"🔊 Listen Audio",
+back:"⬅️ Back to Home"
+},
+
+hi:{
+name:"ऐतिहासिक गाँव",
+location:"📍 महाराष्ट्र, भारत",
+historyTitle:"📜 ऐतिहासिक जानकारी",
+history:"यह गाँव स्थानीय इतिहास, परंपराओं और संस्कृति का महत्वपूर्ण हिस्सा है। गाँव की वास्तुकला, परंपराएँ और जीवनशैली स्थानीय विरासत को दर्शाती हैं।",
+cultureTitle:"🏛️ सांस्कृतिक महत्व",
+culture:"पारंपरिक जीवनशैली, कला और त्योहार गाँव की सांस्कृतिक विरासत को संरक्षित करते हैं।",
+audioTitle:"🔊 ऑडियो गाइड",
+audioText:"गाँव की जानकारी सुनने के लिए यहाँ ऑडियो गाइड की सुविधा उपलब्ध की जा सकती है।",
+audioBtn:"🔊 ऑडियो सुनें",
+back:"⬅️ मुख्य पृष्ठ पर जाएँ"
+}
+
+}
+
 };
+
 
 function changeLanguage(){
 
     const lang = document.getElementById("language").value;
-    const d = data[lang];
+
+    const urlParams = new URLSearchParams(window.location.search);
+
+    const type = urlParams.get("type") || "raigad";
+
+    const place = data[type] || data.raigad;
+
+    const d = place[lang];
 
     document.documentElement.lang = lang;
 
@@ -194,10 +337,15 @@ function changeLanguage(){
 
     document.getElementById("audioTitle").innerText = d.audioTitle;
     document.getElementById("audioText").innerText = d.audioText;
-    document.getElementById("audioBtn").innerText = d.audioBtn;
 
+    document.getElementById("audioBtn").innerText = d.audioBtn;
     document.getElementById("backBtn").innerText = d.back;
 }
+
+
+changeLanguage();
+
+</script>
 
 </script>
 
