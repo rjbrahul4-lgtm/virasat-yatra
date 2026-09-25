@@ -147,36 +147,59 @@ of heritage monuments through a small contribution.
 
 function identifySculpture() {
 
-    const scanner = new Html5Qrcode("reader");
+    const reader = document.getElementById("reader");
+    reader.innerHTML = "";
 
-    scanner.start(
-        { facingMode: "environment" },
-        {
-            fps: 10,
-            qrbox: { width: 250, height: 250 }
-        },
+    Html5Qrcode.getCameras().then(function(cameras) {
 
-        function(decodedText) {
+        if (cameras && cameras.length > 0) {
 
-            document.getElementById("scanResult").innerHTML =
-                "✅ QR Scanned! Opening information...";
+            const cameraId = cameras[cameras.length - 1].id;
+            const scanner = new Html5Qrcode("reader");
 
-            scanner.stop().then(function() {
-                window.location.href = decodedText;
-            }).catch(function() {
-                window.location.href = decodedText;
+            scanner.start(
+                cameraId,
+                {
+                    fps: 10,
+                    qrbox: {
+                        width: 250,
+                        height: 250
+                    }
+                },
+
+                function(decodedText) {
+
+                    document.getElementById("scanResult").innerHTML =
+                        "✅ QR Scanned! Opening information...";
+
+                    scanner.stop().then(function() {
+                        window.location.href = decodedText;
+                    });
+
+                },
+
+                function(errorMessage) {
+                    // QR शोधत आहे
+                }
+
+            ).catch(function(error) {
+
+                document.getElementById("scanResult").innerHTML =
+                    "❌ Camera start failed: " + error;
+
             });
 
-        },
+        } else {
 
-        function(errorMessage) {
-            // QR शोधत आहे...
+            document.getElementById("scanResult").innerHTML =
+                "❌ Camera सापडला नाही.";
+
         }
 
-    ).catch(function(error) {
+    }).catch(function(error) {
 
         document.getElementById("scanResult").innerHTML =
-            "❌ Camera open होत नाही. Camera permission Allow करा.";
+            "❌ Camera permission द्या: " + error;
 
     });
 }
