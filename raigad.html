@@ -419,6 +419,36 @@ function changeLanguage(){
 
 loadPlace();
 
+function playAudioGuide(){
+
+    speechSynthesis.cancel();
+
+    const lang = document.getElementById("language").value;
+
+    let voiceLang = "mr-IN";
+
+    if(lang === "en"){
+        voiceLang = "en-IN";
+    }
+
+    if(lang === "hi"){
+        voiceLang = "hi-IN";
+    }
+
+    const name = document.getElementById("placeName").innerText;
+    const history = document.getElementById("history").innerText;
+    const culture = document.getElementById("culture").innerText;
+
+    const text = name + ". " + history + " " + culture;
+
+    const speech = new SpeechSynthesisUtterance(text);
+
+    speech.lang = voiceLang;
+    speech.rate = 0.9;
+    speech.pitch = 1;
+
+    speechSynthesis.speak(speech);
+}
 </script>
 </body>
 </html>
