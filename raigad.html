@@ -121,7 +121,7 @@ style="width:100%; border-radius:15px; margin-top:15px;">
 <h2 id="audioTitle">🔊 Audio Guide</h2>
 
 <p id="audioText">
-रायगड किल्ल्याची माहिती ऑडिओ स्वरूपात ऐकण्यासाठी येथे सुविधा उपलब्ध केली जाऊ शकते.
+रायगड किल्ल्याची माहिती ऑडिओ स्वरूपात ऐकण्यासाठी येथे सुविधा उपलब्ध आहे.
 </p>
 
 <a href="#" class="btn" id="audioBtn">
@@ -130,9 +130,36 @@ style="width:100%; border-radius:15px; margin-top:15px;">
 
 </div>
 
-<a href="index.html" class="btn" id="backBtn">
-⬅️ Back to Home
-</a>
+function playAudioGuide(){
+
+    speechSynthesis.cancel();
+
+    const lang = document.getElementById("language").value;
+
+    let voiceLang = "mr-IN";
+
+    if(lang === "en"){
+        voiceLang = "en-IN";
+    }
+
+    if(lang === "hi"){
+        voiceLang = "hi-IN";
+    }
+
+    const name = document.getElementById("placeName").innerText;
+    const history = document.getElementById("history").innerText;
+    const culture = document.getElementById("culture").innerText;
+
+    const text = name + ". " + history + " " + culture;
+
+    const speech = new SpeechSynthesisUtterance(text);
+
+    speech.lang = voiceLang;
+    speech.rate = 0.9;
+    speech.pitch = 1;
+
+    speechSynthesis.speak(speech);
+}
 
 </div>
 
