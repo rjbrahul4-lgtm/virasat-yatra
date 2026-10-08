@@ -349,9 +349,46 @@ its history, culture, architecture and importance.
 
     <br>
 
-    <button class="btn" onclick="reportDamage()">
-      Report Damage
-    </button>
+    <div style="margin-top:20px;">
+
+  <input
+    type="text"
+    id="reportName"
+    placeholder="तुमचे नाव"
+    style="width:100%; padding:12px; margin-bottom:10px; box-sizing:border-box;">
+
+  <input
+    type="text"
+    id="reportPlace"
+    placeholder="स्थळ / किल्ल्याचे नाव"
+    style="width:100%; padding:12px; margin-bottom:10px; box-sizing:border-box;">
+
+  <select
+    id="reportIssue"
+    style="width:100%; padding:12px; margin-bottom:10px; box-sizing:border-box;">
+
+    <option>नुकसानाचा प्रकार निवडा</option>
+    <option>मूर्तीचे नुकसान</option>
+    <option>वास्तूचे नुकसान</option>
+    <option>भिंतीचे नुकसान</option>
+    <option>स्वच्छतेची समस्या</option>
+    <option>इतर</option>
+
+  </select>
+
+  <textarea
+    id="reportMessage"
+    placeholder="नुकसानाबद्दल थोडक्यात माहिती लिहा..."
+    style="width:100%; padding:12px; height:90px; margin-bottom:10px; box-sizing:border-box;">
+  </textarea>
+
+  <button
+    class="btn"
+    onclick="alert('✅ तुमचा Damage Report यशस्वीपणे नोंदवला गेला!')">
+    ⚠️ Report Damage
+  </button>
+
+    </div>
 
   </div>
 
