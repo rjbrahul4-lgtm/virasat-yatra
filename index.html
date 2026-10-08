@@ -172,9 +172,38 @@ footer p {
   margin: 5px;
 }
 
-@media (min-width: 700px) {
-  .cards {
-    grid-template-columns: repeat(2, 1fr);
+<div style="margin-top:20px;">
+
+  <input
+    type="text"
+    id="guideName"
+    placeholder="तुमचे नाव"
+    style="width:100%; padding:12px; margin-bottom:10px; box-sizing:border-box;">
+
+  <input
+    type="text"
+    id="guidePlace"
+    placeholder="कोणत्या ठिकाणी Guide हवा?"
+    style="width:100%; padding:12px; margin-bottom:10px; box-sizing:border-box;">
+
+  <select
+    id="guideLanguage"
+    style="width:100%; padding:12px; margin-bottom:10px; box-sizing:border-box;">
+
+    <option>भाषा निवडा</option>
+    <option>मराठी</option>
+    <option>हिंदी</option>
+    <option>English</option>
+
+  </select>
+
+  <button
+    class="btn"
+    onclick="alert('✅ Guide Booking Request यशस्वीपणे नोंदवली गेली!')">
+    👨‍🏫 Book Local Guide
+  </button>
+
+</div>
   }
 }
 </style>
