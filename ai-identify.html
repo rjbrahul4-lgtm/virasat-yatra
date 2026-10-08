@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>AI Heritage Identify | Virasat Yatra</title>
+
+<style>
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+body{
+  font-family:Arial,sans-serif;
+  background:#f7f3ea;
+  color:#222;
+}
+
+header{
+  background:#8b0000;
+  color:white;
+  text-align:center;
+  padding:22px 15px;
+}
+
+.logo{
+  font-size:28px;
+  font-weight:bold;
+}
+
+.subtitle{
+  margin-top:7px;
+  font-size:14px;
+}
+
+.container{
+  max-width:700px;
+  margin:auto;
+  padding:20px;
+}
+
+.card{
+  background:white;
+  border-radius:18px;
+  padding:22px;
+  margin-bottom:20px;
+  box-shadow:0 4px 15px rgba(0,0,0,0.12);
+}
+
+h1{
+  text-align:center;
+  color:#8b0000;
+  margin-bottom:10px;
+}
+
+.intro{
+  text-align:center;
+  line-height:1.6;
+  margin-bottom:20px;
+}
+
+.upload{
+  border:2px dashed #8b0000;
+  border-radius:15px;
+  padding:30px 15px;
+  text-align:center;
+  background:#fffaf5;
+}
+
+.upload input{
+  margin-top:15px;
+}
+
+.preview{
+  width:100%;
+  max-height:300px;
+  object-fit:contain;
+  margin-top:20px;
+  border-radius:12px;
+  display:none;
+}
+
+.btn{
+  display:block;
+  width:100%;
+  border:none;
+  background:#8b0000;
+  color:white;
+  padding:15px;
+  border-radius:12px;
+  margin-top:15px;
+  font-size:17px;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+.result{
+  display:none;
+}
+
+.result h2{
+  color:#8b0000;
+  margin-bottom:15px;
+}
+
+.info{
+  margin:12px 0;
+  line-height:1.6;
+}
+
+.badge{
+  display:inline-block;
+  background:#e8f5e9;
+  color:#176b2c;
+  padding:8px 12px;
+  border-radius:20px;
+  font-weight:bold;
+}
+
+.loading{
+  display:none;
+  text-align:center;
+  padding:20px;
+}
+
+.back{
+  background:#333;
+}
+
+footer{
+  background:#8b0000;
+  color:white;
+  text-align:center;
+  padding:20px;
+  margin-top:20px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">🏛️ VIRASAT YATRA</div>
+  <div class="subtitle">Digital Heritage & Tourism Platform</div>
+</header>
+
+<div class="container">
+
+<div class="card">
+
+<h1>🤖 AI Heritage Identify</h1>
+
+<p class="intro">
+मूर्ती किंवा ऐतिहासिक वास्तूचा फोटो अपलोड करा.
+AI आधारित Demo System त्या वारशाची संभाव्य ओळख आणि माहिती दाखवेल.
+</p>
+
+<div class="upload">
+
+<h2>📸 फोटो निवडा</h2>
+
+<p style="margin-top:10px;">
+मूर्ती / मंदिर / किल्ला / ऐतिहासिक वास्तू
+</p>
+
+<input
+type="file"
+id="imageInput"
+accept="image/*"
+onchange="previewImage(event)"
+>
+
+<img id="preview" class="preview">
+
+<button class="btn" onclick="identifyHeritage()">
+🔍 AI द्वारे ओळखा
+</button>
+
+</div>
+
+<div id="loading" class="loading">
+⏳ AI Heritage Analysis सुरू आहे...<br>
+कृपया थोडा वेळ थांबा.
+</div>
+
+</div>
+
+
+<div id="result" class="card result">
+
+<h2>✅ AI Identification Result</h2>
+
+<div class="info">
+<strong>🏛️ ओळख:</strong>
+<span id="name"></span>
+</div>
+
+<div class="info">
+<strong>📅 कालखंड:</strong>
+<span id="period"></span>
+</div>
+
+<div class="info">
+<strong>🎨 कला / शैली:</strong>
+<span id="style"></span>
+</div>
+
+<div class="info">
+<strong>📍 संबंधित ठिकाण:</strong>
+<span id="location"></span>
+</div>
+
+<div class="info">
+<strong>📜 ऐतिहासिक माहिती:</strong>
+<span id="history"></span>
+</div>
+
+<div style="margin-top:15px;">
+<span class="badge">✔ Demo Verified Information</span>
+</div>
+
+</div>
+
+
+<div class="card">
+
+<h2>💡 Smart Heritage</h2>
+
+<p style="line-height:1.7;margin-top:10px;">
+AI, QR आणि डिजिटल तंत्रज्ञान
